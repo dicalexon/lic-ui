@@ -89,8 +89,6 @@ namespace licui
 			{
 				size_t Width;
 				size_t Height;
-				size_t DispX;
-				size_t DispY;
 				graphics::IMAGE<unsigned char, 3> Image;
 			};
 

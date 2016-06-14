@@ -71,7 +71,7 @@ namespace licui
 
 			struct GRADIENT_POINT
 			{
-				double Position; // Position in percents
+				double Position; // Position in range 0..1
 				APP_COLOR Color;
 			};
 

@@ -1992,18 +1992,6 @@ namespace licui
 			}
 			return result;
 		}
-
-		APP_POINT CControl::FormToClient(const int x, const int y)
-		{
-			APP_POINT result{ x, y };
-			if (m_pParent)
-			{
-				APP_POINT pp = m_pParent->ClientToForm(m_pParent->getPosition());
-				result.X -= pp.X;
-				result.Y -= pp.Y;
-			}
-			return result;
-		}
 #pragma endregion
 
 #pragma region Getters

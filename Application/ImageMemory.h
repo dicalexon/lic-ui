@@ -20,8 +20,8 @@ namespace licui
 			{
 				int Width;
 				int Height;
-				math::RECTANGLE<int> Border;
-				math::RECTANGLE<int> Radius;
+				APP_RECT Border;
+				APP_RECT Radius;
 				size_t AntiAliazing;
 				double Locations[graphics::bplBottom + 1];
 				graphics::BLOCK_POINT_LOCATION Location;

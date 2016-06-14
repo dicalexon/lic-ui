@@ -691,7 +691,6 @@ namespace licui
 			math::POINT<double> ClientToForm(const math::POINT<double> &pos);
 			APP_RECT FormToClient(const APP_RECT &rect);
 			APP_POINT FormToClient(const APP_POINT &pos);
-			APP_POINT FormToClient(const int x, const int y);
 		};
 		/*
 		using C::getOnKeyDown;

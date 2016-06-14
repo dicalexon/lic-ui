@@ -48,31 +48,31 @@ namespace licui
 			virtual GLYPH *getChar(const wchar_t chr);
 			virtual APP_POINT getStringSize(const String &str);
 
-			virtual IFont *setName(const String &value);
-			virtual IFont *setHeight(const int value);
-			virtual IFont *setWeight(const int value);
-			virtual IFont *setItalic(const bool value);
-			virtual IFont *setUnderline(const bool value);
-			virtual IFont *setStrikeOut(const bool value);
-			virtual IFont *setWidth(const int value);
-			virtual IFont *setCharSet(const unsigned int value);
-			virtual IFont *setQuality(const unsigned int value);
-			virtual IFont *setPitchAndFamily(const unsigned int value);
-			virtual IFont *setOrientation(const int value);
-			virtual IFont *setDistance(const int value);
-			virtual IFont *setShadow(const bool value);
-			virtual IFont *setShadowShift(const APP_POINT &value);
-			virtual IFont *setShadowShift(const int x, const int y);
-			virtual IFont *setShadowShiftX(const int value);
-			virtual IFont *setShadowShiftY(const int value);
-			virtual IFont *setShadowBlur(const size_t value);
-			virtual IFont *setShadowColor(const APP_COLOR &value);
-			virtual IFont *setShadowColor(const unsigned char r, const unsigned char g, const unsigned char b, const unsigned char a);
-			virtual IFont *setColor(const APP_COLOR &value);
-			virtual IFont *setColor(const unsigned char r, const unsigned char g, const unsigned char b, const unsigned char a);
-			virtual IFont *setInterpolate(const bool value);
+			IFont *setName(const String &value) override;
+			IFont *setHeight(const int value) override;
+			IFont *setWeight(const int value) override;
+			IFont *setItalic(const bool value) override;
+			IFont *setUnderline(const bool value) override;
+			IFont *setStrikeOut(const bool value) override;
+			IFont *setWidth(const int value) override;
+			IFont *setCharSet(const unsigned int value) override;
+			IFont *setQuality(const unsigned int value) override;
+			IFont *setPitchAndFamily(const unsigned int value) override;
+			IFont *setOrientation(const int value) override;
+			IFont *setDistance(const int value) override;
+			IFont *setShadow(const bool value) override;
+			IFont *setShadowShift(const APP_POINT &value) override;
+			IFont *setShadowShift(const int x, const int y) override;
+			IFont *setShadowShiftX(const int value) override;
+			IFont *setShadowShiftY(const int value) override;
+			IFont *setShadowBlur(const size_t value) override;
+			IFont *setShadowColor(const APP_COLOR &value) override;
+			IFont *setShadowColor(const unsigned char r, const unsigned char g, const unsigned char b, const unsigned char a) override;
+			IFont *setColor(const APP_COLOR &value) override;
+			IFont *setColor(const unsigned char r, const unsigned char g, const unsigned char b, const unsigned char a) override;
+			IFont *setInterpolate(const bool value) override;
 
-			virtual void AddCharacters(const String &str);
+			void AddCharacters(const String &str) override;
 		};
 
 		class CPresenterGDI :public IPresenter

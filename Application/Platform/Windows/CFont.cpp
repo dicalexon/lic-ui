@@ -502,7 +502,7 @@ namespace licui
 					}
 			}
 			w = x2 + 1 + x1;
-			CHAR_IMAGE *image = new CHAR_IMAGE{ chr,{ (size_t)size.cx, (size_t)lines, (size_t)disp_x, (size_t)disp_y } };
+			CHAR_IMAGE *image = new CHAR_IMAGE{ chr,{ (size_t)size.cx, (size_t)lines } };
 			image->Data.Image.Alloc(w + dw, lines + dh);
 			image->Data.Image.FillChannel(0, 0);
 			for (y = 0; y < lines; y++)

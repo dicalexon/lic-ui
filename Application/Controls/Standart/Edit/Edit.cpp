@@ -879,7 +879,7 @@ namespace licui
 
 		void CEdit::ProcessMouseDown(const int x, const int y, const bool shift)
 		{
-			APP_POINT cursor_pos = FormToClient(x, y);
+			APP_POINT cursor_pos = FormToClient(APP_POINT{ x, y });
 			APP_RECT r = getClientRect();
 			if (cursor_pos.X >= r.Left && cursor_pos.X < r.Right && cursor_pos.Y >= r.Top && cursor_pos.Y < r.Bottom)
 			{
@@ -920,7 +920,7 @@ namespace licui
 
 		void CEdit::ProcessMouseMove(const int x, const int y)
 		{
-			APP_POINT cursor_pos = FormToClient(x, y);
+			APP_POINT cursor_pos = FormToClient(APP_POINT{ x, y });
 			APP_RECT client_rect = getClientRect();
 			size_t new_caret{ CursorToCaret(cursor_pos.X - getRect().Left) };
 			if (cursor_pos.X >= client_rect.Left && cursor_pos.X < client_rect.Right && cursor_pos.Y >= client_rect.Top && cursor_pos.Y < client_rect.Bottom)
