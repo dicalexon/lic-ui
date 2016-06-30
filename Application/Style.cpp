@@ -82,13 +82,13 @@ namespace licui
 		int CStyle::FindImageIndex(const String &name)
 		{
 			SortImages();
-			CStyleSkin search{ ToLower(name), nullptr };
-			auto pos = std::lower_bound(m_aSkins.begin(), m_aSkins.end(), &search, [](const CStyleSkin *a, const CStyleSkin *b) { return a->getClassName() < b->getClassName(); });
-			if (pos == m_aSkins.end())
+			CStyleImage search{ ToLower(name) };
+			auto pos = std::lower_bound(m_aImages.begin(), m_aImages.end(), &search, [](const CStyleImage *a, const CStyleImage *b) { return a->getClassName() < b->getClassName(); });
+			if (pos == m_aImages.end())
 				return -1;
 			if ((*pos)->getClassName() != search.getClassName())
 				return -1;
-			return pos - m_aSkins.begin();
+			return pos - m_aImages.begin();
 		}
 
 		int CStyle::FindSkinIndex(const String &name)
@@ -449,7 +449,7 @@ namespace licui
 		String CStyle::getParameterByName(const String &name, const String &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->ValueS;
 		}
@@ -457,7 +457,7 @@ namespace licui
 		int CStyle::getParameterByName(const String &name, const int default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->Integer;
 		}
@@ -465,7 +465,7 @@ namespace licui
 		double CStyle::getParameterByName(const String &name, const double default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->Double;
 		}
@@ -473,7 +473,7 @@ namespace licui
 		bool CStyle::getParameterByName(const String &name, const bool default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->Bool;
 		}
@@ -481,7 +481,7 @@ namespace licui
 		size_t CStyle::getParameterByName(const String &name, const size_t default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->Size;
 		}
@@ -489,7 +489,7 @@ namespace licui
 		APP_RECT CStyle::getParameterByName(const String &name, const APP_RECT &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->RectSigned;
 		}
@@ -497,7 +497,7 @@ namespace licui
 		math::RECTANGLE<size_t> CStyle::getParameterByName(const String &name, const math::RECTANGLE<size_t> &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->RectUnsigned;
 		}
@@ -505,7 +505,7 @@ namespace licui
 		math::RECTANGLE<bool> CStyle::getParameterByName(const String &name, const math::RECTANGLE<bool> &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->RectBool;
 		}
@@ -513,7 +513,7 @@ namespace licui
 		APP_COLOR CStyle::getParameterByName(const String &name, const APP_COLOR &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->Color;
 		}
@@ -521,7 +521,7 @@ namespace licui
 		APP_POINT CStyle::getParameterByName(const String &name, const APP_POINT &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->PointSigned;
 		}
@@ -529,7 +529,7 @@ namespace licui
 		math::POINT<size_t> CStyle::getParameterByName(const String &name, const math::POINT<size_t> &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->PointUnsigned;
 		}
@@ -537,7 +537,7 @@ namespace licui
 		math::POINT<double> CStyle::getParameterByName(const String &name, const math::POINT<double> &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->PointDouble;
 		}
@@ -545,7 +545,7 @@ namespace licui
 		math::POINT<bool> CStyle::getParameterByName(const String &name, const math::POINT<bool> &default_value)
 		{
 			int index{ FindParameterIndex(name) };
-			if (index <= 0)
+			if (index < 0)
 				return default_value;
 			return m_aParameters[index]->PointBool;
 		}

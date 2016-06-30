@@ -240,7 +240,7 @@ namespace licui
 			CImageMemory();
 			CImageMemory(const size_t width, const size_t height, const String &name);
 
-			graphics::IMAGE<unsigned char, 4> &getImage();
+			APP_IMAGE &getImage();
 			void Alloc(const size_t width, const size_t height);
 		};
 	}

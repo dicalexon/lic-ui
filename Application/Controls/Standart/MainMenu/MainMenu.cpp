@@ -374,6 +374,11 @@ namespace licui
 			CControl::NotifyOnPaint(clip);
 		}
 
+		void CMainMenu::NotifyOnParentResize()
+		{
+			Update();
+		}
+
 		void CMainMenu::NotifyOnClick(CControl *sender)
 		{
 			if (m_fOnClick)

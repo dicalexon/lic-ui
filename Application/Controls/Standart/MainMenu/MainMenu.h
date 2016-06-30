@@ -938,6 +938,7 @@ namespace licui
 			void NotifyOnShow() override;
 			void NotifyOnDetachControl(CControl *control) override;
 			void NotifyOnPaint(APP_RECT clip) override;
+			void NotifyOnParentResize() override;
 
 			// Should Call ProcessMouseUp of childs and return false on MouseUp
 			virtual void NotifyOnClick(CControl *sender);
